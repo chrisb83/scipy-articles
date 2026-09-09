@@ -171,7 +171,7 @@ include the subprojects directory.}
 The \texttt{stats} module in SciPy supports calculations for a large number of
 probability distributions, including the generation of random variates.
 These sampling algorithms are often specifically designed for a given
-distribution, e.g., by relying general methods such as inversion of the CDF
+distribution, e.g., by relying on general methods such as inversion of the CDF
 \footnote{Note that accurate and fast CDF inversion is usually non-trivial.} or on the rejection
 principle \cite{vonneumann1951}. In contrast, there are also so-called
 automatic or black-box methods that can sample from large classes of
@@ -183,8 +183,8 @@ automatically derived in a setup step, which can then be used to draw random
 variates of the distribution.
 
 Although such universal methods were originally motivated by non-standard
-distributions, they offer advantages that make them attractive even for
-standard ones:
+distributions \cite{hormann2004}, they offer advantages that make them attractive
+even for standard ones (see \cite{derflinger2010} for further use cases):
 
 \begin{itemize}
 \item They can be used to sample from truncated distributions.
@@ -203,9 +203,10 @@ Hermite-interpolation-based \cite{hormann2003} CDF inversion, and the simple
 ratio-of-uniforms method \cite{leydold2001, leydold2003}, as well as for
 discrete distributions, i.e., guide-table \cite{chen1974} and alias-urn
 \cite{walker1977} methods, all built on the C library UNU.RAN
-\cite{hormann2007}. The interface is consistent with the rest of the
-distributions infrastructure, e.g., \texttt{rvs} is used for sampling. For
-details and benchmarking, please refer to \cite{baumgarten2022}.
+\cite{hormann2007}. For convenience, \texttt{FastGeneratorInversion}
+can be used to create a generator based on the inversion method from frozen
+\texttt{scipy.stats} distribution objects. For further details and benchmarking,
+please refer to \cite{baumgarten2022}.
 
 \begin{acks}
 We thank everyone who has contributed to SciPy 2.0, from those who have posted one
