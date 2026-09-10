@@ -172,15 +172,15 @@ The \texttt{stats} module in SciPy supports calculations for a large number of
 probability distributions, including the generation of random variates.
 These sampling algorithms are often specifically designed for a given
 distribution, e.g., by relying on general methods such as inversion of the CDF
-\footnote{Note that accurate and fast CDF inversion is usually non-trivial.} or on the rejection
-principle~\cite{vonneumann1951}. In contrast, there are also so-called
-automatic or black-box methods that can sample from large classes of
-distributions using a single piece of code, requiring only basic information
-about the distribution --- such as the density (and optionally its
-derivative), the CDF, and/or the mode (see~\cite{hormann2004} for an
-overview). Based on this input, a generator is
-automatically derived in a setup step, which can then be used to draw random
-variates of the distribution.
+\footnote{Note that accurate and fast CDF inversion is usually non-trivial.}
+or on the rejection principle~\cite{vonneumann1951}. In contrast, there are
+also so-called automatic or black-box methods: the same implementation can be
+used to sample from large classes of distributions, requiring only basic
+information about the distribution --- such as the density (and optionally
+its derivative), the CDF, and/or the mode (see~\cite{hormann2004} for an
+overview). Based on this input, a generator is automatically derived in a
+setup step, which can then be used to draw random variates of the
+distribution.
 
 Although such universal methods were originally motivated by nonstandard
 distributions~\cite{hormann2004}, they offer advantages that make them attractive
